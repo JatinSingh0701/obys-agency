@@ -1,5 +1,4 @@
 const loader = () => {
-  // Create a GSAP timeline
   let tl = gsap.timeline();
 
   // Animation for ".line h1" elements
@@ -10,26 +9,24 @@ const loader = () => {
     delay: 0.5,
   });
 
-  // Animation for "#line-timer" and ".line h2" elements
+  //Animation for "#line-timer" and ".line h2 elements
   tl.from("#line-timer", {
     opacity: 0,
     onStart: () => {
-      // Function to start a timer
       let loaderTimer = document.querySelector("#line-timer h5");
 
       let timer = 0;
 
-      // Set up an interval to update the timer value every 35 milliseconds
       const intervalId = setInterval(() => {
         timer++;
         loaderTimer.textContent = timer;
 
-        // Clear the interval when the timer reaches 100
         if (timer === 100) clearInterval(intervalId);
       }, 35);
     },
   });
 
+  // fontchange Animation
   tl.to(".line h2", {
     animationName: "fontchange",
     opacity: 1,
@@ -39,7 +36,7 @@ const loader = () => {
   tl.to("#loader", {
     opacity: 0,
     duration: 0.4,
-    delay: 3.7,
+    delay: 0, // 3.7
   });
 
   // Animation to bring in "#page1" element with delay, y offset, and opacity
@@ -55,6 +52,27 @@ const loader = () => {
   tl.to("#loader", {
     display: "none",
   });
+
+  tl.from("nav", {
+    opacity: 0,
+  });
+
+  tl.from(".hero h1, .hero h2, .hero h3", {
+    y: 120,
+    stagger: 0.2,
+  });
+};
+
+const cursor = () => {
+  document.addEventListener("mousemove", (dets) => {
+    gsap.to("#crsr", {
+      left: dets.x,
+      top: dets.y,
+    });
+  });
+  Shery.makeMagnet("#nav-part2 h4");
+  Shery.makeMagnet("nav svg");
 };
 
 loader();
+cursor();
