@@ -39,8 +39,8 @@ const loader = () => {
     delay: 0, // 3.7
   });
 
-  // Animation to bring in "#page1" element with delay, y offset, and opacity
-  tl.from("#page1", {
+  // Animation to bring in "#navbar" element with delay, y offset, and opacity
+  tl.from("#navbar", {
     delay: 0.2,
     y: 1200,
     opacity: 0,
@@ -57,8 +57,8 @@ const loader = () => {
     opacity: 0,
   });
 
-  tl.from(".hero h1, .hero h2, .hero h3", {
-    y: 120,
+  tl.from("#hero1 h1, #hero2 h1, #hero3 h2, #hero3 h3, #hero4 h1", {
+    y: 160,
     stagger: 0.2,
   });
 };

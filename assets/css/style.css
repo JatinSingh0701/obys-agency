@@ -111,17 +111,18 @@ body {
 
 main {
   position: relative;
-  background-color: #030303;
+  background-color: #151515;
 }
 
 /* Page 1 */
-#page1 {
+#navbar,
+#inside-navbar {
   height: 100vh;
   width: 100%;
   background-color: #151515;
 }
 
-#page1 nav {
+#navbar nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -164,8 +165,137 @@ main {
   line-height: 7.2vw;
 }
 
+.hero h2 {
+  border-bottom: 0.5vw solid white;
+  padding-bottom: 0.8vw;
+}
+
 .hero h2:hover {
   -webkit-text-stroke: 2px #fff;
   color: transparent;
+  border-bottom: 0.5vw solid transparent;
+  transition: all ease 0.3s;
+}
+
+#inside-navbar {
+  padding-top: 17vh;
+  position: relative;
+}
+
+#video-container {
+  height: 66vh;
+  width: 71vw;
+  position: relative;
+  left: 28%;
+  background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+}
+
+#video-crsr {
+  position: absolute;
+  background-color: #ffa63d;
+  height: 8.5vw;
+  width: 8.5vw;
+  border-radius: 50%;
+  top: -10;
+  left: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+#video-crsr i {
+  color: #fff;
+  font-size: 2vw;
+}
+
+#video-container img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+}
+
+#video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#projects,
+#about,
+#partner {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #151515;
+}
+
+#about {
+  padding: 7vh 0;
+}
+
+#about-content {
+  position: relative;
+  width: 72vw;
+  margin-left: 28%;
+}
+
+#about-content h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+}
+
+.underline {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  margin: 5vw 0;
+}
+
+#about-content > p {
+  /* background-color: #ffa63d; */
+  font-size: 2vw;
+  width: fit-content;
+  margin-bottom: 3vw;
+}
+
+#about-flex {
+  display: flex;
+}
+
+#about-flex img {
+  width: 48%;
+}
+
+#about-flex p {
+  font-size: 0.9vw;
+  width: 19%;
+  margin-left: 1vw;
+}
+
+#blue-box {
+  position: relative;
+  width: 33vw;
+  padding: 3vw;
+  background-color: #3f7df4;
+  margin-top: -35vh;
+  margin-left: 26vw;
+}
+
+.blue-box-elem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5vw 0;
+  border-bottom: 1px solid #fff;
+}
+
+.blue-box-elem h4 {
+  font-size: 1.3vw;
   font-weight: 500;
+}
+.blue-box-elem p {
+  width: 40%;
+  font-size: 0.8vw;
 }
