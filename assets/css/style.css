@@ -30,13 +30,30 @@
   }
 }
 
+@keyframes scoller {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
 /* General */
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #3f7df4;
+  --color-secondary: #ffa63d;
+  --color-background: #151515;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "plain light";
-  color: #fff;
+  color: var(--color-white);
 }
 
 html,
@@ -45,13 +62,16 @@ body {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
 /* Cursor */
 #crsr {
   height: 2.5vw;
   width: 2.5vw;
   position: fixed;
   border-radius: 50%;
-  border: 1px solid #ffffffbe;
+  border: 1px solid var(--color-white);
   z-index: 9999999999;
   background-color: transparent;
   mix-blend-mode: difference;
@@ -63,7 +83,7 @@ body {
   width: 100%;
   position: fixed;
   z-index: 999;
-  background-color: #0b0b0b;
+  background-color: var(--color-background);
   padding: 25vh 10vw;
 }
 
@@ -111,15 +131,14 @@ body {
 
 main {
   position: relative;
-  background-color: #151515;
+  background-color: var(--color-background);
 }
 
-/* Page 1 */
 #navbar,
 #inside-navbar {
   height: 100vh;
   width: 100%;
-  background-color: #151515;
+  background-color: var(--color-background);
 }
 
 #navbar nav {
@@ -156,7 +175,24 @@ main {
   margin-top: 18vh;
 }
 
-.hero h1,
+.hero h1 {
+  font-size: 7.2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 7.2vw;
+  position: relative;
+}
+
+#hero1::before {
+  content: "01";
+  position: absolute;
+  font-size: 3vw;
+  font-weight: 100;
+  font-family: "silk serif";
+  left: 20%;
+  top: 29%;
+}
+
 .hero h2,
 .hero h3 {
   font-size: 7.2vw;
@@ -166,12 +202,12 @@ main {
 }
 
 .hero h2 {
-  border-bottom: 0.5vw solid white;
+  border-bottom: 0.5vw solid var(--color-white);
   padding-bottom: 0.8vw;
 }
 
 .hero h2:hover {
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 2px var(--color-white);
   color: transparent;
   border-bottom: 0.5vw solid transparent;
   transition: all ease 0.3s;
@@ -192,7 +228,7 @@ main {
 
 #video-crsr {
   position: absolute;
-  background-color: #ffa63d;
+  background-color: var(--color-secondary);
   height: 8.5vw;
   width: 8.5vw;
   border-radius: 50%;
@@ -204,7 +240,7 @@ main {
   z-index: 99;
 }
 #video-crsr i {
-  color: #fff;
+  color: var(--color-white);
   font-size: 2vw;
 }
 
@@ -224,11 +260,11 @@ main {
 
 #projects,
 #about,
-#partner {
+#scrollbar {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  background-color: #151515;
+  background-color: var(--color-background);
 }
 
 #about {
@@ -244,12 +280,23 @@ main {
 #about-content h1 {
   font-size: 7vw;
   text-transform: uppercase;
+  position: relative;
+}
+
+#about-content h1::before {
+  content: "03";
+  position: absolute;
+  font-size: 3vw;
+  font-family: "silk serif";
+  font-weight: 100;
+  left: -12%;
+  top: 8%;
 }
 
 .underline {
   height: 1px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--color-white);
   margin: 5vw 0;
 }
 
@@ -278,7 +325,7 @@ main {
   position: relative;
   width: 33vw;
   padding: 3vw;
-  background-color: #3f7df4;
+  background-color: var(--color-primary);
   margin-top: -35vh;
   margin-left: 26vw;
 }
@@ -288,14 +335,110 @@ main {
   align-items: flex-start;
   justify-content: space-between;
   padding: 1.5vw 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color-white);
 }
 
 .blue-box-elem h4 {
   font-size: 1.3vw;
   font-weight: 500;
 }
+
 .blue-box-elem p {
   width: 40%;
   font-size: 0.8vw;
+}
+
+.elem,
+.elem2 {
+  white-space: nowrap;
+  margin-bottom: -2vw;
+  /* line-height: 6.5vw; */
+}
+
+.elem span,
+.elem2 span {
+  font-style: italic;
+  font-family: "silk serif";
+}
+
+.elem h1,
+.elem span,
+.elem2 h1,
+.elem2 span {
+  font-size: 7vw;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--color-white);
+  font-weight: 400;
+  color: transparent;
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.elem h1 {
+  animation: scoller 20s linear infinite;
+}
+
+.elem2 h1 {
+  transform: translateX(calc(-100% - 20px));
+  animation: scoller 20s linear infinite reverse;
+}
+
+footer {
+  height: 85vh;
+  width: 100%;
+  background-color: var(--color-background);
+  position: relative;
+  padding-left: 28vw;
+  padding-right: 2vw;
+}
+
+footer h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  position: relative;
+}
+
+footer h1::before {
+  content: "04";
+  position: absolute;
+  font-size: 3vw;
+  font-family: "silk serif";
+  font-weight: 100;
+  left: -12%;
+  top: 8%;
+}
+
+.underline {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-white);
+  margin: 3vw 0;
+}
+
+#footer-div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 15vw;
+  padding-top: 4vw;
+  margin-bottom: 6vw;
+}
+
+.box {
+  width: 20%;
+}
+
+#footer-div h6 {
+  font-size: 0.9vw;
+  margin-bottom: 1.5vw;
+}
+
+#footer-div h5 {
+  font-size: 1.4vw;
+  font-weight: 500;
+}
+
+#copyright {
+  font-size: 1vw;
+  font-weight: 500;
 }
