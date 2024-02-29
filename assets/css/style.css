@@ -275,6 +275,11 @@ main {
   padding: 17vh 0;
 }
 
+#projects {
+  margin-bottom: 20vh;
+  padding: 17vh 2vw;
+}
+
 #projects h1 {
   font-size: 7vw;
   text-transform: uppercase;
@@ -620,4 +625,9 @@ footer .underline {
 #copyright {
   font-size: 1vw;
   font-weight: 500;
+}
+
+._canvas_container {
+  z-index: 99999999999 !important;
+  pointer-events: none;
 }
