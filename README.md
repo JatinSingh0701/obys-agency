@@ -35,7 +35,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
 ````bash
- it clone https://github.com/JatinSingh0701/obys-agency.git
+ git clone https://github.com/JatinSingh0701/obys-agency.git
   ````
 
 2. Navigate to the project directory:
